@@ -109,4 +109,4 @@ dist
 .tern-port
 
 # archive files
-*g.zip
+*.zip
