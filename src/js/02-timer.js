@@ -62,10 +62,23 @@ function onChooseDate(selectedDate) {
     const leftTimeObj = convertMs(selectedDate - toDay);
 
     // Перебор ключей объекта ссылок
-    Object.keys(refs.leftTime).forEach(dateTimeProp => {
-        refs.leftTime[dateTimeProp].textContent = addLeadingZero(leftTimeObj[dateTimeProp]);
-    });
+    // updateTimerValue(refs.leftTime, leftTimeObj);
+    
+    const updateTimerValue = dtProp => {
+        refs.leftTime[dtProp].textContent = addLeadingZero(leftTimeObj[dtProp]);
+    };
+
+    Object.keys(refs.leftTime).forEach(updateTimerValue);
+
 };
+
+
+// function updateTimerValue({ days, hours, minutes, seconds }, leftTime) {
+//     days.textContent = addLeadingZero(leftTime.days);
+//     hours.textContent = addLeadingZero(leftTime.hours);
+//     minutes.textContent = addLeadingZero(leftTime.minutes);
+//     seconds.textContent = addLeadingZero(leftTime.seconds);
+// };
 
 function convertMs(ms) {
   // Number of milliseconds per unit of time
