@@ -1,7 +1,10 @@
-const btnStartRef = document.querySelector('button [data-start]');
-const btnStopRef = document.querySelector('button [data-stop]');
+const btnStartRef = document.querySelector('button[data-start]');
+console.log(btnStartRef);
+const btnStopRef = document.querySelector('button[data-stop]');
+console.log(btnStopRef);
 // 
 btnStopRef.setAttribute("disabled", true);
+
 // 
 btnStartRef.addEventListener('click', onBtnStartClk);
 btnStopRef.addEventListener('click', onBtnStopClk);

@@ -15,7 +15,7 @@ const refs = {
         seconds: document.querySelector(".timer [data-seconds]"),
     },
 };
-
+console.log(refs.btnStart);
 refs.btnStart.setAttribute("disabled", true);
 
 const datePickerOptions = {
