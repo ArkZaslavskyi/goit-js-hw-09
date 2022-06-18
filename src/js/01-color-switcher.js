@@ -1,7 +1,5 @@
 const btnStartRef = document.querySelector('button[data-start]');
-console.log(btnStartRef);
 const btnStopRef = document.querySelector('button[data-stop]');
-console.log(btnStopRef);
 // 
 btnStopRef.setAttribute("disabled", true);
 

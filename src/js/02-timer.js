@@ -1,7 +1,6 @@
 import flatpickr from "flatpickr";
 import "flatpickr/dist/flatpickr.min.css";
 
-// import { Notify } from 'notiflix/build/notiflix-notify-aio';
 import { Notify } from 'notiflix';
 
 const refs = {
@@ -15,7 +14,10 @@ const refs = {
         seconds: document.querySelector(".timer [data-seconds]"),
     },
 };
-console.log(refs.btnStart);
+console.log(refs.leftTime.days);
+console.log(refs.leftTime.hours);
+console.log(refs.leftTime.minutes);
+console.log(refs.leftTime.seconds);
 refs.btnStart.setAttribute("disabled", true);
 
 const datePickerOptions = {
@@ -29,25 +31,25 @@ const datePickerOptions = {
         // return onChooseDate(selectedDates)
     },
 };
-// const datePicker =
-    flatpickr(refs.dtPicker, datePickerOptions);
+flatpickr(refs.dtPicker, datePickerOptions);
 
 let interavlId = null;
 
 function checkDate(selectedDates) {
     const toDay = (new Date()).getTime();
+    const selectedDate = selectedDates[0].getTime();
 
-    if (toDay >= selectedDates[0].getTime()) {
+    if (toDay >= selectedDate) {
         return Notify.warning('Please choose a date in the future');
     }
 
     refs.btnStart.removeAttribute("disabled");
 
-    onBtnStartClk = () => {
+    const onBtnStartClk = () => {
         refs.btnStart.setAttribute("disabled", true);
         refs.dtPicker.setAttribute("disabled", true);
 
-        interavlId = setInterval(onChooseDate, 1000, selectedDates[0].getTime())
+        interavlId = setInterval(onChooseDate, 1000, selectedDate)
     }
 
     refs.btnStart.addEventListener('click', onBtnStartClk);
