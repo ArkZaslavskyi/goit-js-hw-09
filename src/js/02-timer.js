@@ -14,10 +14,6 @@ const refs = {
         seconds: document.querySelector(".timer [data-seconds]"),
     },
 };
-console.log(refs.leftTime.days);
-console.log(refs.leftTime.hours);
-console.log(refs.leftTime.minutes);
-console.log(refs.leftTime.seconds);
 refs.btnStart.setAttribute("disabled", true);
 
 const datePickerOptions = {
@@ -28,7 +24,6 @@ const datePickerOptions = {
     dateFormat: 'd-m-Y H:i',
     onClose(selectedDates) {
         return checkDate(selectedDates)
-        // return onChooseDate(selectedDates)
     },
 };
 flatpickr(refs.dtPicker, datePickerOptions);
