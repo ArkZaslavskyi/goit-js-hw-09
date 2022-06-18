@@ -2,7 +2,8 @@ import flatpickr from "flatpickr";
 import "flatpickr/dist/flatpickr.min.css";
 
 // import { Notify } from 'notiflix/build/notiflix-notify-aio';
-import Notiflix from 'notiflix';
+import { Notify } from 'notiflix';
+
 const refs = {
     dtPicker: document.querySelector('#datetime-picker'),
     btnStart: document.querySelector('button[data-start]'),
@@ -37,7 +38,7 @@ function checkDate(selectedDates) {
     const toDay = (new Date()).getTime();
 
     if (toDay >= selectedDates[0].getTime()) {
-        return Notiflix.Notify.warning('Please choose a date in the future');
+        return Notify.warning('Please choose a date in the future');
     }
 
     refs.btnStart.removeAttribute("disabled");
