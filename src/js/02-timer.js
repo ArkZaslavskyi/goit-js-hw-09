@@ -62,8 +62,8 @@ function onChooseDate(selectedDate) {
     const leftTimeObj = convertMs(selectedDate - toDay);
 
     // Перебор ключей объекта ссылок
-    Object.keys(refs.leftTime).forEach(dateTimeProperty => {
-        refs.leftTime[dateTimeProperty].textContent = addLeadingZero(leftTimeObj[dateTimeProperty]);
+    Object.keys(refs.leftTime).forEach(dateTimeProp => {
+        refs.leftTime[dateTimeProp].textContent = addLeadingZero(leftTimeObj[dateTimeProp]);
     });
 };
 

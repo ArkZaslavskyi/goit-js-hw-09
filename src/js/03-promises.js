@@ -1,7 +1,6 @@
 import {Notify} from 'notiflix';
 
 const formRef = document.querySelector('.form');
-console.log(formRef);
 formRef.addEventListener('submit', onFormSubmit);
 
 function onFormSubmit(e) {
